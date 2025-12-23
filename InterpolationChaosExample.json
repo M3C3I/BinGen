@@ -1,0 +1,392 @@
+{
+  "total_duration": 90.0,
+  "global_vol_l": 1.0,
+  "global_vol_r": 1.0,
+  "voices": [
+    {
+      "name": "Range 100",
+      "interpolation_type": "linear",
+      "group_id": "group100",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 100.0, "freq_r": 102.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 150.0, "freq_r": 153.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 170.0, "freq_r": 175.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_3"}
+      ]
+    },
+    {
+      "name": "Range 100 (parabolic)",
+      "interpolation_type": "parabolic",
+      "group_id": "group100",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 100.0, "freq_r": 102.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 150.0, "freq_r": 153.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 170.0, "freq_r": 175.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_3"}
+      ]
+    },
+    {
+      "name": "Range 100 (parabolic_inverse)",
+      "interpolation_type": "parabolic_inverse",
+      "group_id": "group100",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 100.0, "freq_r": 102.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 150.0, "freq_r": 153.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 170.0, "freq_r": 175.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_3"}
+      ]
+    },
+    {
+      "name": "Range 100 (exponential)",
+      "interpolation_type": "exponential",
+      "group_id": "group100",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 100.0, "freq_r": 102.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 150.0, "freq_r": 153.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 170.0, "freq_r": 175.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_3"}
+      ]
+    },
+    {
+      "name": "Range 100 (exponential_inverse)",
+      "interpolation_type": "exponential_inverse",
+      "group_id": "group100",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 100.0, "freq_r": 102.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 150.0, "freq_r": 153.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 170.0, "freq_r": 175.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_3"}
+      ]
+    },
+    {
+      "name": "Range 100 (polynomial)",
+      "interpolation_type": "polynomial",
+      "group_id": "group100",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 100.0, "freq_r": 102.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 150.0, "freq_r": 153.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 170.0, "freq_r": 175.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_3"}
+      ]
+    },
+    {
+      "name": "Range 100 (polynomial_inverse)",
+      "interpolation_type": "polynomial_inverse",
+      "group_id": "group100",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 100.0, "freq_r": 102.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 150.0, "freq_r": 153.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 170.0, "freq_r": 175.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync100_3"}
+      ]
+    },
+    {
+      "name": "Range 200",
+      "interpolation_type": "linear",
+      "group_id": "group200",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 200.0, "freq_r": 202.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 250.0, "freq_r": 253.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 270.0, "freq_r": 275.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_3"}
+      ]
+    },
+    {
+      "name": "Range 200 (parabolic)",
+      "interpolation_type": "parabolic",
+      "group_id": "group200",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 200.0, "freq_r": 202.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 250.0, "freq_r": 253.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 270.0, "freq_r": 275.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_3"}
+      ]
+    },
+    {
+      "name": "Range 200 (parabolic_inverse)",
+      "interpolation_type": "parabolic_inverse",
+      "group_id": "group200",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 200.0, "freq_r": 202.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 250.0, "freq_r": 253.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 270.0, "freq_r": 275.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_3"}
+      ]
+    },
+    {
+      "name": "Range 200 (exponential)",
+      "interpolation_type": "exponential",
+      "group_id": "group200",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 200.0, "freq_r": 202.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 250.0, "freq_r": 253.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 270.0, "freq_r": 275.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_3"}
+      ]
+    },
+    {
+      "name": "Range 200 (exponential_inverse)",
+      "interpolation_type": "exponential_inverse",
+      "group_id": "group200",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 200.0, "freq_r": 202.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 250.0, "freq_r": 253.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 270.0, "freq_r": 275.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_3"}
+      ]
+    },
+    {
+      "name": "Range 200 (polynomial)",
+      "interpolation_type": "polynomial",
+      "group_id": "group200",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 200.0, "freq_r": 202.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 250.0, "freq_r": 253.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 270.0, "freq_r": 275.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_3"}
+      ]
+    },
+    {
+      "name": "Range 200 (polynomial_inverse)",
+      "interpolation_type": "polynomial_inverse",
+      "group_id": "group200",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 200.0, "freq_r": 202.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 250.0, "freq_r": 253.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 270.0, "freq_r": 275.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync200_3"}
+      ]
+    },
+    {
+      "name": "Range 300",
+      "interpolation_type": "linear",
+      "group_id": "group300",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 300.0, "freq_r": 302.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 350.0, "freq_r": 353.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 370.0, "freq_r": 375.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_3"}
+      ]
+    },
+    {
+      "name": "Range 300 (parabolic)",
+      "interpolation_type": "parabolic",
+      "group_id": "group300",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 300.0, "freq_r": 302.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 350.0, "freq_r": 353.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 370.0, "freq_r": 375.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_3"}
+      ]
+    },
+    {
+      "name": "Range 300 (parabolic_inverse)",
+      "interpolation_type": "parabolic_inverse",
+      "group_id": "group300",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 300.0, "freq_r": 302.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 350.0, "freq_r": 353.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 370.0, "freq_r": 375.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_3"}
+      ]
+    },
+    {
+      "name": "Range 300 (exponential)",
+      "interpolation_type": "exponential",
+      "group_id": "group300",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 300.0, "freq_r": 302.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 350.0, "freq_r": 353.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 370.0, "freq_r": 375.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_3"}
+      ]
+    },
+    {
+      "name": "Range 300 (exponential_inverse)",
+      "interpolation_type": "exponential_inverse",
+      "group_id": "group300",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 300.0, "freq_r": 302.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 350.0, "freq_r": 353.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 370.0, "freq_r": 375.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_3"}
+      ]
+    },
+    {
+      "name": "Range 300 (polynomial)",
+      "interpolation_type": "polynomial",
+      "group_id": "group300",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 300.0, "freq_r": 302.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 350.0, "freq_r": 353.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 370.0, "freq_r": 375.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_3"}
+      ]
+    },
+    {
+      "name": "Range 300 (polynomial_inverse)",
+      "interpolation_type": "polynomial_inverse",
+      "group_id": "group300",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 300.0, "freq_r": 302.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 350.0, "freq_r": 353.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 370.0, "freq_r": 375.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync300_3"}
+      ]
+    },
+    {
+      "name": "Range 400",
+      "interpolation_type": "linear",
+      "group_id": "group400",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 400.0, "freq_r": 402.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 450.0, "freq_r": 453.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 470.0, "freq_r": 475.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_3"}
+      ]
+    },
+    {
+      "name": "Range 400 (parabolic)",
+      "interpolation_type": "parabolic",
+      "group_id": "group400",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 400.0, "freq_r": 402.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 450.0, "freq_r": 453.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 470.0, "freq_r": 475.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_3"}
+      ]
+    },
+    {
+      "name": "Range 400 (parabolic_inverse)",
+      "interpolation_type": "parabolic_inverse",
+      "group_id": "group400",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 400.0, "freq_r": 402.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 450.0, "freq_r": 453.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 470.0, "freq_r": 475.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_3"}
+      ]
+    },
+    {
+      "name": "Range 400 (exponential)",
+      "interpolation_type": "exponential",
+      "group_id": "group400",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 400.0, "freq_r": 402.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 450.0, "freq_r": 453.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 470.0, "freq_r": 475.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_3"}
+      ]
+    },
+    {
+      "name": "Range 400 (exponential_inverse)",
+      "interpolation_type": "exponential_inverse",
+      "group_id": "group400",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 400.0, "freq_r": 402.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 450.0, "freq_r": 453.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 470.0, "freq_r": 475.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_3"}
+      ]
+    },
+    {
+      "name": "Range 400 (polynomial)",
+      "interpolation_type": "polynomial",
+      "group_id": "group400",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 400.0, "freq_r": 402.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 450.0, "freq_r": 453.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 470.0, "freq_r": 475.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_3"}
+      ]
+    },
+    {
+      "name": "Range 400 (polynomial_inverse)",
+      "interpolation_type": "polynomial_inverse",
+      "group_id": "group400",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 400.0, "freq_r": 402.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 450.0, "freq_r": 453.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 470.0, "freq_r": 475.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync400_3"}
+      ]
+    },
+    {
+      "name": "Range 500",
+      "interpolation_type": "linear",
+      "group_id": "group500",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 500.0, "freq_r": 502.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 550.0, "freq_r": 553.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 570.0, "freq_r": 575.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_3"}
+      ]
+    },
+    {
+      "name": "Range 500 (parabolic)",
+      "interpolation_type": "parabolic",
+      "group_id": "group500",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 500.0, "freq_r": 502.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 550.0, "freq_r": 553.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 570.0, "freq_r": 575.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_3"}
+      ]
+    },
+    {
+      "name": "Range 500 (parabolic_inverse)",
+      "interpolation_type": "parabolic_inverse",
+      "group_id": "group500",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 500.0, "freq_r": 502.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 550.0, "freq_r": 553.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 570.0, "freq_r": 575.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_3"}
+      ]
+    },
+    {
+      "name": "Range 500 (exponential)",
+      "interpolation_type": "exponential",
+      "group_id": "group500",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 500.0, "freq_r": 502.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 550.0, "freq_r": 553.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 570.0, "freq_r": 575.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_3"}
+      ]
+    },
+    {
+      "name": "Range 500 (exponential_inverse)",
+      "interpolation_type": "exponential_inverse",
+      "group_id": "group500",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 500.0, "freq_r": 502.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 550.0, "freq_r": 553.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 570.0, "freq_r": 575.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_3"}
+      ]
+    },
+    {
+      "name": "Range 500 (polynomial)",
+      "interpolation_type": "polynomial",
+      "group_id": "group500",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 500.0, "freq_r": 502.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 550.0, "freq_r": 553.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 570.0, "freq_r": 575.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_3"}
+      ]
+    },
+    {
+      "name": "Range 500 (polynomial_inverse)",
+      "interpolation_type": "polynomial_inverse",
+      "group_id": "group500",
+      "unlocked_sync_ids": [],
+      "segments": [
+        {"start_time": 0.0, "duration": 30.0, "freq_l": 500.0, "freq_r": 502.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_1"},
+        {"start_time": 30.0, "duration": 30.0, "freq_l": 550.0, "freq_r": 553.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_2"},
+        {"start_time": 60.0, "duration": 30.0, "freq_l": 570.0, "freq_r": 575.0, "vol_l": 1.0, "vol_r": 1.0, "sync_id": "sync500_3"}
+      ]
+    }
+  ]
+}
