@@ -13,7 +13,7 @@ import copy
 
 # Constants
 SAMPLE_RATE = 44100
-CHUNK_SIZE = 1024
+CHUNK_SIZE = 2048  # Increased from 1024 for better performance with many voices
 DEFAULT_FREQ = 220.0
 DEFAULT_VOL = 1.0
 DEFAULT_DURATION = 600.0  # 10 minutes
@@ -46,13 +46,20 @@ class Voice:
         self.interpolation_type = interpolation_type
         self.group_id = None
         self.unlocked_sync_ids = set()  # set of sync_ids that are unlocked for this voice
+        self._segments_dirty = True  # Flag to track if segments need sorting
 
     def add_segment(self, segment):
         self.segments.append(segment)
-        self.sort_segments()
+        self._segments_dirty = True
 
     def sort_segments(self):
-        self.segments.sort(key=lambda s: s.start_time)
+        if self._segments_dirty:
+            self.segments.sort(key=lambda s: s.start_time)
+            self._segments_dirty = False
+
+    def mark_dirty(self):
+        """Call this when segment properties are modified"""
+        self._segments_dirty = True
 
     def reset_phases(self):
         self.phase_l = 0.0
@@ -61,6 +68,7 @@ class Voice:
     def get_values_at(self, t):
         if not self.segments:
             return 0.0, 0.0, 0.0, 0.0
+        # Only sort if needed (segments were added/modified)
         self.sort_segments()
         # Find the interval
         for i in range(len(self.segments) - 1):
@@ -135,36 +143,82 @@ def get_group_voices(group_id):
 
 def audio_callback(in_data, frame_count, time_info, status):
     global current_time
-    data = np.zeros((frame_count, 2), dtype=np.float32)
     dt = 1.0 / SAMPLE_RATE
-    for i in range(frame_count):
-        t = current_time + i * dt
-        sum_l = 0.0
-        sum_r = 0.0
-        sum_vol_l = 0.0
-        sum_vol_r = 0.0
-        for voice in voices:
-            freq_l, freq_r, vol_l, vol_r = voice.get_values_at(t)
-            if freq_l > SAMPLE_RATE / 2 or freq_r > SAMPLE_RATE / 2:
-                continue
-            sample_l = np.sin(voice.phase_l) * vol_l
-            sample_r = np.sin(voice.phase_r) * vol_r
-            sum_l += sample_l
-            sum_r += sample_r
-            sum_vol_l += vol_l
-            sum_vol_r += vol_r
-            voice.phase_l += 2 * np.pi * freq_l * dt
-            voice.phase_r += 2 * np.pi * freq_r * dt
-        if sum_vol_l > 1.0:
-            sum_l /= sum_vol_l
-        if sum_vol_r > 1.0:
-            sum_r /= sum_vol_r
-        sum_l *= global_vol_l
-        sum_r *= global_vol_r
-        sum_l = np.clip(sum_l, -1.0, 1.0)
-        sum_r = np.clip(sum_r, -1.0, 1.0)
-        data[i, 0] = sum_l
-        data[i, 1] = sum_r
+    
+    # Create time array for all samples in this chunk
+    t_array = current_time + np.arange(frame_count) * dt
+    
+    # Initialize output arrays
+    sum_l = np.zeros(frame_count, dtype=np.float64)
+    sum_r = np.zeros(frame_count, dtype=np.float64)
+    
+    # Count active voices for proper normalization
+    num_active_voices = len([v for v in voices if v.segments])
+    
+    for voice in voices:
+        if not voice.segments:
+            continue
+            
+        # Get frequency and volume values at start and end of chunk for interpolation
+        # This avoids calling get_values_at() for every sample
+        freq_l_start, freq_r_start, vol_l_start, vol_r_start = voice.get_values_at(t_array[0])
+        freq_l_end, freq_r_end, vol_l_end, vol_r_end = voice.get_values_at(t_array[-1])
+        
+        # Skip if frequencies are too high (anti-aliasing)
+        if freq_l_start > SAMPLE_RATE / 2 and freq_l_end > SAMPLE_RATE / 2:
+            continue
+        if freq_r_start > SAMPLE_RATE / 2 and freq_r_end > SAMPLE_RATE / 2:
+            continue
+        
+        # Linearly interpolate frequency and volume across the chunk for smooth transitions
+        frac = np.linspace(0.0, 1.0, frame_count)
+        freq_l = freq_l_start + frac * (freq_l_end - freq_l_start)
+        freq_r = freq_r_start + frac * (freq_r_end - freq_r_start)
+        vol_l = vol_l_start + frac * (vol_l_end - vol_l_start)
+        vol_r = vol_r_start + frac * (vol_r_end - vol_r_start)
+        
+        # Compute phase increments for each sample
+        phase_inc_l = 2.0 * np.pi * freq_l * dt
+        phase_inc_r = 2.0 * np.pi * freq_r * dt
+        
+        # Build phase array: phase at sample i uses increment applied BEFORE sample i
+        # Sample 0 uses voice.phase_l, sample 1 uses voice.phase_l + inc[0], etc.
+        phase_offsets_l = np.concatenate([[0], np.cumsum(phase_inc_l[:-1])])
+        phase_offsets_r = np.concatenate([[0], np.cumsum(phase_inc_r[:-1])])
+        
+        phases_l = voice.phase_l + phase_offsets_l
+        phases_r = voice.phase_r + phase_offsets_r
+        
+        # Generate samples
+        samples_l = np.sin(phases_l) * vol_l
+        samples_r = np.sin(phases_r) * vol_r
+        
+        sum_l += samples_l
+        sum_r += samples_r
+        
+        # Update voice phase for next chunk (wrap to avoid floating point precision issues)
+        voice.phase_l = (phases_l[-1] + phase_inc_l[-1]) % (2.0 * np.pi)
+        voice.phase_r = (phases_r[-1] + phase_inc_r[-1]) % (2.0 * np.pi)
+    
+    # Normalize by sqrt of number of voices to preserve perceived loudness
+    # (dividing by N voices makes things too quiet; sqrt(N) is perceptually better)
+    if num_active_voices > 1:
+        norm_factor = np.sqrt(num_active_voices)
+        sum_l /= norm_factor
+        sum_r /= norm_factor
+    
+    # Apply global volume
+    sum_l *= global_vol_l
+    sum_r *= global_vol_r
+    
+    # Soft clipping to avoid harsh distortion (tanh-based)
+    # This smoothly limits the signal instead of hard clipping
+    sum_l = np.tanh(sum_l)
+    sum_r = np.tanh(sum_r)
+    
+    # Combine into stereo output
+    data = np.column_stack((sum_l, sum_r)).astype(np.float32)
+    
     current_time += frame_count * dt
     if current_time >= total_duration:
         return data.tobytes(), pyaudio.paComplete
@@ -468,7 +522,7 @@ def edit_segment():
             seg.freq_r = fr
             seg.vol_l = vl
             seg.vol_r = vr
-            voice.sort_segments()
+            voice.mark_dirty()
             if voice.group_id and seg.sync_id not in voice.unlocked_sync_ids:
                 group_voices = get_group_voices(voice.group_id)
                 for other in group_voices:
@@ -482,7 +536,7 @@ def edit_segment():
                             o_seg.freq_r = seg.freq_r
                             o_seg.vol_l = seg.vol_l
                             o_seg.vol_r = seg.vol_r
-                            other.sort_segments()
+                            other.mark_dirty()
                             break
             update_segments_tree()
             update_plot()
@@ -529,7 +583,7 @@ def lock_segment():
                     o_seg.freq_r = seg.freq_r
                     o_seg.vol_l = seg.vol_l
                     o_seg.vol_r = seg.vol_r
-                    other.sort_segments()
+                    other.mark_dirty()
                     break
         voice.unlocked_sync_ids.remove(seg.sync_id)
         messagebox.showinfo("Info", "Segment locked and synced across group.")
@@ -564,6 +618,7 @@ def update_segments_tree():
     segments_tree.delete(*segments_tree.get_children())
     if selected_voice_index >= 0:
         voice = voices[selected_voice_index]
+        voice.sort_segments()  # Ensure segments are sorted before display
         for seg in voice.segments:
             segments_tree.insert("", tk.END, values=(seg.start_time, seg.duration, seg.freq_l, seg.freq_r, seg.vol_l, seg.vol_r))
 
