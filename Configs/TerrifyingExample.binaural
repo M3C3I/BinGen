@@ -1,0 +1,340 @@
+{
+  "name": "Wild Psychedelic Drug Use Frequency Variations",
+  "sources": [
+    {
+      "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "name": "Alpha Waves (Decreased Power - Wild Sawtooth Exponential)",
+      "enabled": true,
+      "transition_style": "EXPONENTIAL_IN",
+      "waveform": "SAWTOOTH",
+      "events": [
+        {
+          "id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+          "start_time": 0.0,
+          "duration": 10.0,
+          "left_frequency": 220.0,
+          "right_frequency": 228.0,
+          "left_volume": 0.45939338820950554,
+          "right_volume": 0.45939338820950554
+        },
+        {
+          "id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+          "start_time": 10.0,
+          "duration": 10.0,
+          "left_frequency": 215.0,
+          "right_frequency": 223.5,
+          "left_volume": 0.3046667116827462,
+          "right_volume": 0.6046667116827462
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+          "start_time": 20.0,
+          "duration": 10.0,
+          "left_frequency": 225.0,
+          "right_frequency": 233.0,
+          "left_volume": 0.3916611784549992,
+          "right_volume": 0.6916611784549992
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+          "start_time": 30.0,
+          "duration": 10.0,
+          "left_frequency": 218.0,
+          "right_frequency": 226.8,
+          "left_volume": 0.4591567464798976,
+          "right_volume": 0.7591567464798976
+        },
+        {
+          "id": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
+          "start_time": 40.0,
+          "duration": 10.0,
+          "left_frequency": 222.0,
+          "right_frequency": 230.2,
+          "left_volume": 0.25663908130286334,
+          "right_volume": 0.45663908130286335
+        },
+        {
+          "id": "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
+          "start_time": 50.0,
+          "duration": 10.0,
+          "left_frequency": 219.0,
+          "right_frequency": 231.0,
+          "left_volume": 0.3496987239795001,
+          "right_volume": 0.5496987239795001
+        }
+      ],
+      "group_id": null,
+      "color": "#e74c3c"
+    },
+    {
+      "id": "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
+      "name": "Theta Waves (Variable - Triangle Sine In Out)",
+      "enabled": true,
+      "transition_style": "SINE_IN_OUT",
+      "waveform": "TRIANGLE",
+      "events": [
+        {
+          "id": "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f",
+          "start_time": 60.0,
+          "duration": 10.0,
+          "left_frequency": 280.0,
+          "right_frequency": 287.5235601759559,
+          "left_volume": 0.5,
+          "right_volume": 0.8
+        },
+        {
+          "id": "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
+          "start_time": 70.0,
+          "duration": 10.0,
+          "left_frequency": 275.0,
+          "right_frequency": 282.86433087196724,
+          "left_volume": 0.6,
+          "right_volume": 0.9
+        },
+        {
+          "id": "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+          "start_time": 80.0,
+          "duration": 10.0,
+          "left_frequency": 285.0,
+          "right_frequency": 292.5649809492233,
+          "left_volume": 0.4,
+          "right_volume": 0.7
+        },
+        {
+          "id": "f2a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c",
+          "start_time": 90.0,
+          "duration": 10.0,
+          "left_frequency": 278.0,
+          "right_frequency": 284.062447590026,
+          "left_volume": 0.55,
+          "right_volume": 0.85
+        },
+        {
+          "id": "a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d",
+          "start_time": 100.0,
+          "duration": 10.0,
+          "left_frequency": 282.0,
+          "right_frequency": 289.1118625743877,
+          "left_volume": 0.45,
+          "right_volume": 0.75
+        },
+        {
+          "id": "b4c5d6e7-f8a9-4b0c-1d2e-3f4a5b6c7d8e",
+          "start_time": 110.0,
+          "duration": 10.0,
+          "left_frequency": 279.0,
+          "right_frequency": 286.1480084456752,
+          "left_volume": 0.65,
+          "right_volume": 0.95
+        }
+      ],
+      "group_id": null,
+      "color": "#f39c12"
+    },
+    {
+      "id": "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f",
+      "name": "Beta Waves (Reduced Low Bands - Edgy Square Ease In Cubic)",
+      "enabled": true,
+      "transition_style": "EASE_IN_CUBIC",
+      "waveform": "SQUARE",
+      "events": [
+        {
+          "id": "d6e7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a",
+          "start_time": 120.0,
+          "duration": 10.0,
+          "left_frequency": 450.0,
+          "right_frequency": 469.14940014376367,
+          "left_volume": 0.6,
+          "right_volume": 0.6
+        },
+        {
+          "id": "e7f8a9b0-c1d2-4e3f-4a5b-6c7d8e9f0a1b",
+          "start_time": 130.0,
+          "duration": 10.0,
+          "left_frequency": 445.0,
+          "right_frequency": 474.11054176759393,
+          "left_volume": 0.5,
+          "right_volume": 0.7
+        },
+        {
+          "id": "f8a9b0c1-d2e3-4f4a-5b6c-7d8e9f0a1b2c",
+          "start_time": 140.0,
+          "duration": 10.0,
+          "left_frequency": 455.0,
+          "right_frequency": 472.42179557656647,
+          "left_volume": 0.4,
+          "right_volume": 0.8
+        },
+        {
+          "id": "a9b0c1d2-e3f4-4a5b-6c7d-8e9f0a1b2c3d",
+          "start_time": 150.0,
+          "duration": 10.0,
+          "left_frequency": 448.0,
+          "right_frequency": 464.9933530870554,
+          "left_volume": 0.55,
+          "right_volume": 0.65
+        },
+        {
+          "id": "b0c1d2e3-f4a5-4b6c-7d8e-9f0a1b2c3d4e",
+          "start_time": 160.0,
+          "duration": 10.0,
+          "left_frequency": 452.0,
+          "right_frequency": 478.0609172789768,
+          "left_volume": 0.45,
+          "right_volume": 0.75
+        },
+        {
+          "id": "c1d2e3f4-a5b6-4c7d-8e9f-0a1b2c3d4e5f",
+          "start_time": 170.0,
+          "duration": 10.0,
+          "left_frequency": 447.0,
+          "right_frequency": 471.77007643475145,
+          "left_volume": 0.65,
+          "right_volume": 0.55
+        }
+      ],
+      "group_id": null,
+      "color": "#9b59b6"
+    },
+    {
+      "id": "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a",
+      "name": "Gamma Waves (Mixed - Intense Soft Square Step)",
+      "enabled": true,
+      "transition_style": "STEP",
+      "waveform": "SOFT_SQUARE",
+      "events": [
+        {
+          "id": "e3f4a5b6-c7d8-4e9f-0a1b-2c3d4e5f6a7b",
+          "start_time": 180.0,
+          "duration": 10.0,
+          "left_frequency": 600.0,
+          "right_frequency": 679.9881859295715,
+          "left_volume": 0.6716048320611474,
+          "right_volume": 0.4716048320611474
+        },
+        {
+          "id": "f4a5b6c7-d8e9-4f0a-1b2c-3d4e5f6a7b8c",
+          "start_time": 190.0,
+          "duration": 10.0,
+          "left_frequency": 590.0,
+          "right_frequency": 660.6644918822824,
+          "left_volume": 0.8043776927787337,
+          "right_volume": 0.5043776927787337
+        },
+        {
+          "id": "a5b6c7d8-e9f0-4a1b-2c3d-4e5f6a7b8c9d",
+          "start_time": 200.0,
+          "duration": 10.0,
+          "left_frequency": 610.0,
+          "right_frequency": 641.9999675277927,
+          "left_volume": 0.4150791377364793,
+          "right_volume": 0.7150791377364794
+        },
+        {
+          "id": "b6c7d8e9-f0a1-4b2c-3d4e-5f6a7b8c9d0e",
+          "start_time": 210.0,
+          "duration": 10.0,
+          "left_frequency": 595.0,
+          "right_frequency": 646.8850583302304,
+          "left_volume": 0.8099898185879473,
+          "right_volume": 0.5099898185879473
+        },
+        {
+          "id": "c7d8e9f0-a1b2-4c3d-4e5f-6a7b8c9d0e1f",
+          "start_time": 220.0,
+          "duration": 10.0,
+          "left_frequency": 605.0,
+          "right_frequency": 651.2968709650627,
+          "left_volume": 0.8930448643624597,
+          "right_volume": 0.5930448643624597
+        },
+        {
+          "id": "d8e9f0a1-b2c3-4d4e-5f6a-7b8c9d0e1f2a",
+          "start_time": 230.0,
+          "duration": 10.0,
+          "left_frequency": 598.0,
+          "right_frequency": 649.0113227330723,
+          "left_volume": 0.7180547371626963,
+          "right_volume": 0.9180547371626963
+        }
+      ],
+      "group_id": null,
+      "color": "#2ecc71"
+    },
+    {
+      "id": "e9f0a1b2-c3d4-4e5f-6a7b-8c9d0e1f2a3b",
+      "name": "General Desynchronization (Chaotic Sine Ease Out Cubic)",
+      "enabled": true,
+      "transition_style": "EASE_OUT_CUBIC",
+      "waveform": "SINE",
+      "events": [
+        {
+          "id": "f0a1b2c3-d4e5-4f6a-7b8c-9d0e1f2a3b4c",
+          "start_time": 240.0,
+          "duration": 10.0,
+          "left_frequency": 300.0,
+          "right_frequency": 323.014540415375,
+          "left_volume": 0.6945722130188008,
+          "right_volume": 0.4945722130188008
+        },
+        {
+          "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+          "start_time": 250.0,
+          "duration": 10.0,
+          "left_frequency": 290.0,
+          "right_frequency": 303.2802879988825,
+          "left_volume": 0.5733937988222352,
+          "right_volume": 0.7733937988222352
+        },
+        {
+          "id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+          "start_time": 260.0,
+          "duration": 10.0,
+          "left_frequency": 310.0,
+          "right_frequency": 326.4249022787352,
+          "left_volume": 0.5139419468528797,
+          "right_volume": 0.3139419468528797
+        },
+        {
+          "id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+          "start_time": 270.0,
+          "duration": 10.0,
+          "left_frequency": 295.0,
+          "right_frequency": 309.30137401044726,
+          "left_volume": 0.6313386300709781,
+          "right_volume": 0.8313386300709781
+        },
+        {
+          "id": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+          "start_time": 280.0,
+          "duration": 10.0,
+          "left_frequency": 305.0,
+          "right_frequency": 319.7540792242416,
+          "left_volume": 0.6972947242980667,
+          "right_volume": 0.4972947242980667
+        },
+        {
+          "id": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+          "start_time": 290.0,
+          "duration": 10.0,
+          "left_frequency": 298.0,
+          "right_frequency": 328.2909462881481,
+          "left_volume": 0.7455118712830859,
+          "right_volume": 0.9455118712830859
+        }
+      ],
+      "group_id": null,
+      "color": "#34495e"
+    }
+  ],
+  "groups": [],
+  "settings": {
+    "duration": 300.0,
+    "master_volume_left": 1.0,
+    "master_volume_right": 1.0,
+    "sample_rate": 48000,
+    "buffer_size": 4096,
+    "limiter_enabled": true,
+    "limiter_threshold": 0.95
+  }
+}

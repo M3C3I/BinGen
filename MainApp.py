@@ -65,63 +65,117 @@ class Voice:
         self.phase_l = 0.0
         self.phase_r = 0.0
 
+    def _apply_interpolation(self, frac):
+        """Apply the voice's interpolation type to a fraction [0,1] and return normalized value."""
+        typ = self.interpolation_type
+        if typ == 'linear':
+            return frac
+        elif typ == 'parabolic':
+            return frac ** 2  # Quadratic ease-in
+        elif typ == 'parabolic_inverse':
+            return 1 - (1 - frac) ** 2  # Quadratic ease-out
+        elif typ == 'exponential':
+            if frac == 0:
+                return 0.0
+            elif frac == 1:
+                return 1.0
+            else:
+                k = 5.0
+                return (exp(k * frac) - 1) / (exp(k) - 1)
+        elif typ == 'exponential_inverse':
+            if frac == 0:
+                return 0.0
+            elif frac == 1:
+                return 1.0
+            else:
+                k = 5.0
+                return 1 - (exp(k * (1 - frac)) - 1) / (exp(k) - 1)
+        elif typ == 'polynomial':
+            return 3 * frac**2 - 2 * frac**3  # Cubic ease-in-out (smoothstep)
+        elif typ == 'polynomial_inverse':
+            # Inverse: starts fast, ends slow (opposite of smoothstep)
+            inv_frac = 1 - frac
+            return 1 - (3 * inv_frac**2 - 2 * inv_frac**3)
+        else:
+            return frac
+
+    def _get_segment_end_time(self, seg, seg_index):
+        """Get the effective end time for a segment.
+        Uses the segment's duration, but caps it at the next segment's start time if one exists."""
+        intended_end = seg.start_time + seg.duration
+        # If there's a next segment, the effective end is the minimum of duration-based end and next start
+        if seg_index < len(self.segments) - 1:
+            next_start = self.segments[seg_index + 1].start_time
+            return min(intended_end, next_start)
+        return intended_end
+
     def get_values_at(self, t):
+        """Get interpolated frequency and volume values at time t.
+        Uses binary search for O(log n) performance with many segments."""
         if not self.segments:
             return 0.0, 0.0, 0.0, 0.0
+        
         # Only sort if needed (segments were added/modified)
         self.sort_segments()
-        # Find the interval
-        for i in range(len(self.segments) - 1):
-            seg = self.segments[i]
-            next_seg = self.segments[i + 1]
-            end = next_seg.start_time
-            if seg.start_time <= t < end:
-                dur = end - seg.start_time
-                if dur <= 0:
-                    return seg.freq_l, seg.freq_r, seg.vol_l, seg.vol_r
-                frac = (t - seg.start_time) / dur
-                
-                typ = self.interpolation_type
-                if typ == 'linear':
-                    norm = frac
-                elif typ == 'parabolic':
-                    norm = frac ** 2  # Quadratic ease-in
-                elif typ == 'parabolic_inverse':
-                    norm = 1 - (1 - frac) ** 2  # Quadratic ease-out
-                elif typ == 'exponential':
-                    if frac == 0:
-                        norm = 0.0
-                    elif frac == 1:
-                        norm = 1.0
-                    else:
-                        k = 5.0
-                        norm = (exp(k * frac) - 1) / (exp(k) - 1)
-                elif typ == 'exponential_inverse':
-                    if frac == 0:
-                        norm = 0.0
-                    elif frac == 1:
-                        norm = 1.0
-                    else:
-                        k = 5.0
-                        norm = 1 - (exp(k * (1 - frac)) - 1) / (exp(k) - 1)
-                elif typ == 'polynomial':
-                    norm = 3 * frac**2 - 2 * frac**3  # Cubic ease-in-out
-                elif typ == 'polynomial_inverse':
-                    norm = 3 * frac**2 - 2 * frac**3  # Same as polynomial since symmetric
-                else:
-                    norm = frac
-                
-                freq_l = seg.freq_l + norm * (next_seg.freq_l - seg.freq_l)
-                freq_r = seg.freq_r + norm * (next_seg.freq_r - seg.freq_r)
-                vol_l = seg.vol_l + norm * (next_seg.vol_l - seg.vol_l)
-                vol_r = seg.vol_r + norm * (next_seg.vol_r - seg.vol_r)
-                return freq_l, freq_r, vol_l, vol_r
-        # After last segment or in last
-        last_seg = self.segments[-1]
-        if t >= last_seg.start_time:
-            return last_seg.freq_l, last_seg.freq_r, last_seg.vol_l, last_seg.vol_r
-        # Before first
-        return 0.0, 0.0, 0.0, 0.0
+        
+        n = len(self.segments)
+        first_seg = self.segments[0]
+        
+        # Before first segment - return silence
+        if t < first_seg.start_time:
+            return 0.0, 0.0, 0.0, 0.0
+        
+        # Binary search to find the segment containing time t
+        # We want the largest i such that segments[i].start_time <= t
+        left, right = 0, n - 1
+        while left < right:
+            mid = (left + right + 1) // 2
+            if self.segments[mid].start_time <= t:
+                left = mid
+            else:
+                right = mid - 1
+        
+        seg_index = left
+        seg = self.segments[seg_index]
+        
+        # Calculate the effective end time for this segment
+        seg_end = self._get_segment_end_time(seg, seg_index)
+        
+        # If we're past this segment's effective end, return the segment's end values
+        # (this handles the "hold last value" behavior)
+        if t >= seg_end:
+            # Check if there's a next segment we should be in
+            if seg_index < n - 1:
+                next_seg = self.segments[seg_index + 1]
+                if t >= next_seg.start_time:
+                    # Recurse to handle the next segment (shouldn't happen often due to binary search)
+                    # But this handles edge cases with gaps
+                    return self.get_values_at(t)
+            # We're past all segments or in a gap - return last segment's values
+            return seg.freq_l, seg.freq_r, seg.vol_l, seg.vol_r
+        
+        # We're within this segment's active range [start_time, seg_end)
+        # Check if there's a next segment to interpolate towards
+        if seg_index < n - 1:
+            next_seg = self.segments[seg_index + 1]
+            # Interpolate from seg to next_seg
+            interp_end = min(seg_end, next_seg.start_time)
+            dur = interp_end - seg.start_time
+            if dur <= 0:
+                return seg.freq_l, seg.freq_r, seg.vol_l, seg.vol_r
+            
+            frac = (t - seg.start_time) / dur
+            frac = max(0.0, min(1.0, frac))  # Clamp to [0, 1]
+            norm = self._apply_interpolation(frac)
+            
+            freq_l = seg.freq_l + norm * (next_seg.freq_l - seg.freq_l)
+            freq_r = seg.freq_r + norm * (next_seg.freq_r - seg.freq_r)
+            vol_l = seg.vol_l + norm * (next_seg.vol_l - seg.vol_l)
+            vol_r = seg.vol_r + norm * (next_seg.vol_r - seg.vol_r)
+            return freq_l, freq_r, vol_l, vol_r
+        else:
+            # This is the last segment - just return its values (no interpolation)
+            return seg.freq_l, seg.freq_r, seg.vol_l, seg.vol_r
 
 # Global variables
 voices = []  # List of Voice objects
@@ -152,8 +206,8 @@ def audio_callback(in_data, frame_count, time_info, status):
     sum_l = np.zeros(frame_count, dtype=np.float64)
     sum_r = np.zeros(frame_count, dtype=np.float64)
     
-    # Count active voices for proper normalization
-    num_active_voices = len([v for v in voices if v.segments])
+    # Count voices that are actually producing sound at this time
+    num_active_voices = 0
     
     for voice in voices:
         if not voice.segments:
@@ -164,11 +218,20 @@ def audio_callback(in_data, frame_count, time_info, status):
         freq_l_start, freq_r_start, vol_l_start, vol_r_start = voice.get_values_at(t_array[0])
         freq_l_end, freq_r_end, vol_l_end, vol_r_end = voice.get_values_at(t_array[-1])
         
+        # Skip if this voice is silent (volume is zero or frequencies are zero)
+        if (vol_l_start == 0 and vol_l_end == 0 and vol_r_start == 0 and vol_r_end == 0):
+            continue
+        if (freq_l_start == 0 and freq_l_end == 0 and freq_r_start == 0 and freq_r_end == 0):
+            continue
+            
         # Skip if frequencies are too high (anti-aliasing)
         if freq_l_start > SAMPLE_RATE / 2 and freq_l_end > SAMPLE_RATE / 2:
             continue
         if freq_r_start > SAMPLE_RATE / 2 and freq_r_end > SAMPLE_RATE / 2:
             continue
+        
+        # This voice is actively producing sound
+        num_active_voices += 1
         
         # Linearly interpolate frequency and volume across the chunk for smooth transitions
         frac = np.linspace(0.0, 1.0, frame_count)
@@ -200,7 +263,7 @@ def audio_callback(in_data, frame_count, time_info, status):
         voice.phase_l = (phases_l[-1] + phase_inc_l[-1]) % (2.0 * np.pi)
         voice.phase_r = (phases_r[-1] + phase_inc_r[-1]) % (2.0 * np.pi)
     
-    # Normalize by sqrt of number of voices to preserve perceived loudness
+    # Normalize by sqrt of number of active voices to preserve perceived loudness
     # (dividing by N voices makes things too quiet; sqrt(N) is perceptually better)
     if num_active_voices > 1:
         norm_factor = np.sqrt(num_active_voices)
@@ -637,22 +700,29 @@ def update_global_settings():
 def update_plot():
     ax[0].clear()
     ax[1].clear()
-    ts = np.linspace(0, total_duration, 1000)
+    # Reduce number of plot points for better performance with many voices
+    num_points = min(500, max(100, int(total_duration)))  # Scale with duration, cap at 500
+    ts = np.linspace(0, total_duration, num_points)
     colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k']
     for idx, voice in enumerate(voices):
-        freq_l = np.array([voice.get_values_at(t)[0] for t in ts])
-        freq_r = np.array([voice.get_values_at(t)[1] for t in ts])
-        vol_l = np.array([voice.get_values_at(t)[2] for t in ts])
-        vol_r = np.array([voice.get_values_at(t)[3] for t in ts])
+        # Get all values in one pass (much more efficient than 4 separate calls)
+        values = [voice.get_values_at(t) for t in ts]
+        freq_l = np.array([v[0] for v in values])
+        freq_r = np.array([v[1] for v in values])
+        vol_l = np.array([v[2] for v in values])
+        vol_r = np.array([v[3] for v in values])
         color = colors[idx % len(colors)]
         ax[0].plot(ts, freq_l, color + '-', label=f"{voice.name} Left Freq")
         ax[0].plot(ts, freq_r, color + '--', label=f"{voice.name} Right Freq")
         ax[1].plot(ts, vol_l, color + '-', label=f"{voice.name} Left Vol")
         ax[1].plot(ts, vol_r, color + '--', label=f"{voice.name} Right Vol")
     ax[0].set_title("Frequencies")
-    ax[0].legend()
+    # Only show legend if not too many voices (legend gets cluttered)
+    if len(voices) <= 5:
+        ax[0].legend(fontsize='small')
     ax[1].set_title("Volumes")
-    ax[1].legend()
+    if len(voices) <= 5:
+        ax[1].legend(fontsize='small')
     canvas.draw()
 
 def update_current_time_label():

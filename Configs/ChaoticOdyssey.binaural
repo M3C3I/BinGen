@@ -1,0 +1,880 @@
+{
+  "name": "Chaotic Psychedelic Odyssey Frequency Variations",
+  "sources": [
+    {
+      "id": "chaos_alpha_1",
+      "name": "Alpha Dissolution Vortex - Fibonacci Swirls in Sawtooth Exponential Chaos",
+      "enabled": true,
+      "transition_style": "EXPONENTIAL_OUT",
+      "waveform": "SAWTOOTH",
+      "events": [
+        {
+          "id": "alpha_event_1",
+          "start_time": 0.0,
+          "duration": 1.0,
+          "left_frequency": 220.0,
+          "right_frequency": 228.0,
+          "left_volume": 0.3,
+          "right_volume": 0.6
+        },
+        {
+          "id": "alpha_event_2",
+          "start_time": 1.0,
+          "duration": 1.0,
+          "left_frequency": 218.0,
+          "right_frequency": 230.0,
+          "left_volume": 0.4,
+          "right_volume": 0.5
+        },
+        {
+          "id": "alpha_event_3",
+          "start_time": 2.0,
+          "duration": 2.0,
+          "left_frequency": 222.0,
+          "right_frequency": 234.0,
+          "left_volume": 0.2,
+          "right_volume": 0.7
+        },
+        {
+          "id": "alpha_event_4",
+          "start_time": 4.0,
+          "duration": 3.0,
+          "left_frequency": 215.0,
+          "right_frequency": 227.0,
+          "left_volume": 0.5,
+          "right_volume": 0.4
+        },
+        {
+          "id": "alpha_event_5",
+          "start_time": 7.0,
+          "duration": 5.0,
+          "left_frequency": 225.0,
+          "right_frequency": 233.0,
+          "left_volume": 0.1,
+          "right_volume": 0.8
+        },
+        {
+          "id": "alpha_event_6",
+          "start_time": 12.0,
+          "duration": 8.0,
+          "left_frequency": 220.0,
+          "right_frequency": 232.0,
+          "left_volume": 0.6,
+          "right_volume": 0.3
+        },
+        {
+          "id": "alpha_event_7",
+          "start_time": 20.0,
+          "duration": 1.0,
+          "left_frequency": 217.0,
+          "right_frequency": 225.0,
+          "left_volume": 0.35,
+          "right_volume": 0.65
+        },
+        {
+          "id": "alpha_event_8",
+          "start_time": 21.0,
+          "duration": 2.0,
+          "left_frequency": 223.0,
+          "right_frequency": 231.0,
+          "left_volume": 0.25,
+          "right_volume": 0.75
+        },
+        {
+          "id": "alpha_event_9",
+          "start_time": 23.0,
+          "duration": 3.0,
+          "left_frequency": 219.0,
+          "right_frequency": 229.0,
+          "left_volume": 0.45,
+          "right_volume": 0.55
+        },
+        {
+          "id": "alpha_event_10",
+          "start_time": 26.0,
+          "duration": 5.0,
+          "left_frequency": 224.0,
+          "right_frequency": 236.0,
+          "left_volume": 0.15,
+          "right_volume": 0.85
+        },
+        {
+          "id": "alpha_event_11",
+          "start_time": 31.0,
+          "duration": 1.0,
+          "left_frequency": 216.0,
+          "right_frequency": 224.0,
+          "left_volume": 0.55,
+          "right_volume": 0.45
+        },
+        {
+          "id": "alpha_event_12",
+          "start_time": 32.0,
+          "duration": 1.0,
+          "left_frequency": 221.0,
+          "right_frequency": 229.0,
+          "left_volume": 0.05,
+          "right_volume": 0.95
+        },
+        {
+          "id": "alpha_event_13",
+          "start_time": 33.0,
+          "duration": 2.0,
+          "left_frequency": 226.0,
+          "right_frequency": 238.0,
+          "left_volume": 0.7,
+          "right_volume": 0.2
+        },
+        {
+          "id": "alpha_event_14",
+          "start_time": 35.0,
+          "duration": 3.0,
+          "left_frequency": 214.0,
+          "right_frequency": 226.0,
+          "left_volume": 0.8,
+          "right_volume": 0.1
+        },
+        {
+          "id": "alpha_event_15",
+          "start_time": 38.0,
+          "duration": 5.0,
+          "left_frequency": 228.0,
+          "right_frequency": 240.0,
+          "left_volume": 0.0,
+          "right_volume": 1.0
+        },
+        {
+          "id": "alpha_event_16",
+          "start_time": 43.0,
+          "duration": 8.0,
+          "left_frequency": 213.0,
+          "right_frequency": 225.0,
+          "left_volume": 1.0,
+          "right_volume": 0.0
+        },
+        {
+          "id": "alpha_event_17",
+          "start_time": 51.0,
+          "duration": 13.0,
+          "left_frequency": 227.0,
+          "right_frequency": 239.0,
+          "left_volume": 0.4,
+          "right_volume": 0.6
+        },
+        {
+          "id": "alpha_event_18",
+          "start_time": 64.0,
+          "duration": 1.0,
+          "left_frequency": 212.0,
+          "right_frequency": 220.0,
+          "left_volume": 0.6,
+          "right_volume": 0.4
+        }
+      ],
+      "group_id": null,
+      "color": "#ff0000"
+    },
+    {
+      "id": "chaos_theta_2",
+      "name": "Theta Introspection Labyrinth - Golden Ratio Pulses in Triangle Sine Waves",
+      "enabled": true,
+      "transition_style": "SINE_IN_OUT",
+      "waveform": "TRIANGLE",
+      "events": [
+        {
+          "id": "theta_event_1",
+          "start_time": 0.0,
+          "duration": 1.0,
+          "left_frequency": 280.0,
+          "right_frequency": 284.0,
+          "left_volume": 0.5,
+          "right_volume": 0.8
+        },
+        {
+          "id": "theta_event_2",
+          "start_time": 1.0,
+          "duration": 1.0,
+          "left_frequency": 278.0,
+          "right_frequency": 285.618,
+          "left_volume": 0.618,
+          "right_volume": 0.382
+        },
+        {
+          "id": "theta_event_3",
+          "start_time": 2.0,
+          "duration": 2.0,
+          "left_frequency": 282.0,
+          "right_frequency": 286.0,
+          "left_volume": 0.4,
+          "right_volume": 0.9
+        },
+        {
+          "id": "theta_event_4",
+          "start_time": 4.0,
+          "duration": 3.0,
+          "left_frequency": 276.0,
+          "right_frequency": 283.618,
+          "left_volume": 0.7,
+          "right_volume": 0.3
+        },
+        {
+          "id": "theta_event_5",
+          "start_time": 7.0,
+          "duration": 5.0,
+          "left_frequency": 284.0,
+          "right_frequency": 288.0,
+          "left_volume": 0.2,
+          "right_volume": 1.0
+        },
+        {
+          "id": "theta_event_6",
+          "start_time": 12.0,
+          "duration": 8.0,
+          "left_frequency": 274.0,
+          "right_frequency": 281.618,
+          "left_volume": 0.9,
+          "right_volume": 0.1
+        },
+        {
+          "id": "theta_event_7",
+          "start_time": 20.0,
+          "duration": 13.0,
+          "left_frequency": 286.0,
+          "right_frequency": 290.0,
+          "left_volume": 0.3,
+          "right_volume": 0.7
+        },
+        {
+          "id": "theta_event_8",
+          "start_time": 33.0,
+          "duration": 1.0,
+          "left_frequency": 272.0,
+          "right_frequency": 279.618,
+          "left_volume": 0.8,
+          "right_volume": 0.2
+        },
+        {
+          "id": "theta_event_9",
+          "start_time": 34.0,
+          "duration": 1.0,
+          "left_frequency": 288.0,
+          "right_frequency": 292.0,
+          "left_volume": 0.1,
+          "right_volume": 0.9
+        },
+        {
+          "id": "theta_event_10",
+          "start_time": 35.0,
+          "duration": 2.0,
+          "left_frequency": 270.0,
+          "right_frequency": 277.618,
+          "left_volume": 1.0,
+          "right_volume": 0.0
+        },
+        {
+          "id": "theta_event_11",
+          "start_time": 37.0,
+          "duration": 3.0,
+          "left_frequency": 290.0,
+          "right_frequency": 294.0,
+          "left_volume": 0.0,
+          "right_volume": 1.0
+        },
+        {
+          "id": "theta_event_12",
+          "start_time": 40.0,
+          "duration": 5.0,
+          "left_frequency": 268.0,
+          "right_frequency": 275.618,
+          "left_volume": 0.5,
+          "right_volume": 0.5
+        },
+        {
+          "id": "theta_event_13",
+          "start_time": 45.0,
+          "duration": 8.0,
+          "left_frequency": 292.0,
+          "right_frequency": 296.0,
+          "left_volume": 0.618,
+          "right_volume": 0.382
+        },
+        {
+          "id": "theta_event_14",
+          "start_time": 53.0,
+          "duration": 13.0,
+          "left_frequency": 266.0,
+          "right_frequency": 273.618,
+          "left_volume": 0.382,
+          "right_volume": 0.618
+        },
+        {
+          "id": "theta_event_15",
+          "start_time": 66.0,
+          "duration": 21.0,
+          "left_frequency": 294.0,
+          "right_frequency": 298.0,
+          "left_volume": 0.7,
+          "right_volume": 0.3
+        },
+        {
+          "id": "theta_event_16",
+          "start_time": 87.0,
+          "duration": 1.0,
+          "left_frequency": 264.0,
+          "right_frequency": 271.618,
+          "left_volume": 0.9,
+          "right_volume": 0.1
+        },
+        {
+          "id": "theta_event_17",
+          "start_time": 88.0,
+          "duration": 2.0,
+          "left_frequency": 296.0,
+          "right_frequency": 300.0,
+          "left_volume": 0.2,
+          "right_volume": 0.8
+        },
+        {
+          "id": "theta_event_18",
+          "start_time": 90.0,
+          "duration": 3.0,
+          "left_frequency": 262.0,
+          "right_frequency": 269.618,
+          "left_volume": 0.4,
+          "right_volume": 0.6
+        }
+      ],
+      "group_id": null,
+      "color": "#ffa500"
+    },
+    {
+      "id": "chaos_beta_3",
+      "name": "Beta Hallucination Fractals - Sacred Geometry Steps in Square Pulses",
+      "enabled": true,
+      "transition_style": "STEP",
+      "waveform": "SQUARE",
+      "events": [
+        {
+          "id": "beta_event_1",
+          "start_time": 0.0,
+          "duration": 1.0,
+          "left_frequency": 450.0,
+          "right_frequency": 462.0,
+          "left_volume": 0.5,
+          "right_volume": 0.5
+        },
+        {
+          "id": "beta_event_2",
+          "start_time": 1.0,
+          "duration": 1.0,
+          "left_frequency": 455.0,
+          "right_frequency": 475.0,
+          "left_volume": 0.3,
+          "right_volume": 0.7
+        },
+        {
+          "id": "beta_event_3",
+          "start_time": 2.0,
+          "duration": 1.0,
+          "left_frequency": 440.0,
+          "right_frequency": 460.0,
+          "left_volume": 0.8,
+          "right_volume": 0.2
+        },
+        {
+          "id": "beta_event_4",
+          "start_time": 3.0,
+          "duration": 2.0,
+          "left_frequency": 460.0,
+          "right_frequency": 480.0,
+          "left_volume": 0.1,
+          "right_volume": 0.9
+        },
+        {
+          "id": "beta_event_5",
+          "start_time": 5.0,
+          "duration": 3.0,
+          "left_frequency": 435.0,
+          "right_frequency": 455.0,
+          "left_volume": 0.9,
+          "right_volume": 0.1
+        },
+        {
+          "id": "beta_event_6",
+          "start_time": 8.0,
+          "duration": 5.0,
+          "left_frequency": 465.0,
+          "right_frequency": 485.0,
+          "left_volume": 0.2,
+          "right_volume": 0.8
+        },
+        {
+          "id": "beta_event_7",
+          "start_time": 13.0,
+          "duration": 8.0,
+          "left_frequency": 430.0,
+          "right_frequency": 450.0,
+          "left_volume": 0.7,
+          "right_volume": 0.3
+        },
+        {
+          "id": "beta_event_8",
+          "start_time": 21.0,
+          "duration": 1.0,
+          "left_frequency": 470.0,
+          "right_frequency": 490.0,
+          "left_volume": 0.4,
+          "right_volume": 0.6
+        },
+        {
+          "id": "beta_event_9",
+          "start_time": 22.0,
+          "duration": 1.0,
+          "left_frequency": 425.0,
+          "right_frequency": 445.0,
+          "left_volume": 0.6,
+          "right_volume": 0.4
+        },
+        {
+          "id": "beta_event_10",
+          "start_time": 23.0,
+          "duration": 1.0,
+          "left_frequency": 475.0,
+          "right_frequency": 495.0,
+          "left_volume": 0.0,
+          "right_volume": 1.0
+        },
+        {
+          "id": "beta_event_11",
+          "start_time": 24.0,
+          "duration": 2.0,
+          "left_frequency": 420.0,
+          "right_frequency": 440.0,
+          "left_volume": 1.0,
+          "right_volume": 0.0
+        },
+        {
+          "id": "beta_event_12",
+          "start_time": 26.0,
+          "duration": 3.0,
+          "left_frequency": 480.0,
+          "right_frequency": 500.0,
+          "left_volume": 0.5,
+          "right_volume": 0.5
+        },
+        {
+          "id": "beta_event_13",
+          "start_time": 29.0,
+          "duration": 5.0,
+          "left_frequency": 415.0,
+          "right_frequency": 435.0,
+          "left_volume": 0.3,
+          "right_volume": 0.7
+        },
+        {
+          "id": "beta_event_14",
+          "start_time": 34.0,
+          "duration": 8.0,
+          "left_frequency": 485.0,
+          "right_frequency": 505.0,
+          "left_volume": 0.8,
+          "right_volume": 0.2
+        },
+        {
+          "id": "beta_event_15",
+          "start_time": 42.0,
+          "duration": 13.0,
+          "left_frequency": 410.0,
+          "right_frequency": 430.0,
+          "left_volume": 0.1,
+          "right_volume": 0.9
+        },
+        {
+          "id": "beta_event_16",
+          "start_time": 55.0,
+          "duration": 1.0,
+          "left_frequency": 490.0,
+          "right_frequency": 510.0,
+          "left_volume": 0.9,
+          "right_volume": 0.1
+        },
+        {
+          "id": "beta_event_17",
+          "start_time": 56.0,
+          "duration": 2.0,
+          "left_frequency": 405.0,
+          "right_frequency": 425.0,
+          "left_volume": 0.2,
+          "right_volume": 0.8
+        },
+        {
+          "id": "beta_event_18",
+          "start_time": 58.0,
+          "duration": 3.0,
+          "left_frequency": 495.0,
+          "right_frequency": 515.0,
+          "left_volume": 0.7,
+          "right_volume": 0.3
+        }
+      ],
+      "group_id": null,
+      "color": "#800080"
+    },
+    {
+      "id": "chaos_gamma_4",
+      "name": "Gamma Complexity Explosions - Quantum Foam in Soft Square Cubic Eases",
+      "enabled": true,
+      "transition_style": "EASE_IN_OUT_CUBIC",
+      "waveform": "SOFT_SQUARE",
+      "events": [
+        {
+          "id": "gamma_event_1",
+          "start_time": 0.0,
+          "duration": 1.0,
+          "left_frequency": 600.0,
+          "right_frequency": 630.0,
+          "left_volume": 0.4,
+          "right_volume": 0.9
+        },
+        {
+          "id": "gamma_event_2",
+          "start_time": 1.0,
+          "duration": 1.0,
+          "left_frequency": 590.0,
+          "right_frequency": 690.0,
+          "left_volume": 0.7,
+          "right_volume": 0.3
+        },
+        {
+          "id": "gamma_event_3",
+          "start_time": 2.0,
+          "duration": 1.0,
+          "left_frequency": 610.0,
+          "right_frequency": 650.0,
+          "left_volume": 0.2,
+          "right_volume": 0.8
+        },
+        {
+          "id": "gamma_event_4",
+          "start_time": 3.0,
+          "duration": 1.0,
+          "left_frequency": 580.0,
+          "right_frequency": 680.0,
+          "left_volume": 0.9,
+          "right_volume": 0.1
+        },
+        {
+          "id": "gamma_event_5",
+          "start_time": 4.0,
+          "duration": 2.0,
+          "left_frequency": 620.0,
+          "right_frequency": 660.0,
+          "left_volume": 0.1,
+          "right_volume": 0.9
+        },
+        {
+          "id": "gamma_event_6",
+          "start_time": 6.0,
+          "duration": 3.0,
+          "left_frequency": 570.0,
+          "right_frequency": 670.0,
+          "left_volume": 0.8,
+          "right_volume": 0.2
+        },
+        {
+          "id": "gamma_event_7",
+          "start_time": 9.0,
+          "duration": 5.0,
+          "left_frequency": 630.0,
+          "right_frequency": 670.0,
+          "left_volume": 0.3,
+          "right_volume": 0.7
+        },
+        {
+          "id": "gamma_event_8",
+          "start_time": 14.0,
+          "duration": 8.0,
+          "left_frequency": 560.0,
+          "right_frequency": 660.0,
+          "left_volume": 0.6,
+          "right_volume": 0.4
+        },
+        {
+          "id": "gamma_event_9",
+          "start_time": 22.0,
+          "duration": 13.0,
+          "left_frequency": 640.0,
+          "right_frequency": 680.0,
+          "left_volume": 0.5,
+          "right_volume": 0.5
+        },
+        {
+          "id": "gamma_event_10",
+          "start_time": 35.0,
+          "duration": 1.0,
+          "left_frequency": 550.0,
+          "right_frequency": 650.0,
+          "left_volume": 1.0,
+          "right_volume": 0.0
+        },
+        {
+          "id": "gamma_event_11",
+          "start_time": 36.0,
+          "duration": 1.0,
+          "left_frequency": 650.0,
+          "right_frequency": 690.0,
+          "left_volume": 0.0,
+          "right_volume": 1.0
+        },
+        {
+          "id": "gamma_event_12",
+          "start_time": 37.0,
+          "duration": 2.0,
+          "left_frequency": 540.0,
+          "right_frequency": 640.0,
+          "left_volume": 0.4,
+          "right_volume": 0.6
+        },
+        {
+          "id": "gamma_event_13",
+          "start_time": 39.0,
+          "duration": 3.0,
+          "left_frequency": 660.0,
+          "right_frequency": 700.0,
+          "left_volume": 0.7,
+          "right_volume": 0.3
+        },
+        {
+          "id": "gamma_event_14",
+          "start_time": 42.0,
+          "duration": 5.0,
+          "left_frequency": 530.0,
+          "right_frequency": 630.0,
+          "left_volume": 0.2,
+          "right_volume": 0.8
+        },
+        {
+          "id": "gamma_event_15",
+          "start_time": 47.0,
+          "duration": 8.0,
+          "left_frequency": 670.0,
+          "right_frequency": 710.0,
+          "left_volume": 0.9,
+          "right_volume": 0.1
+        },
+        {
+          "id": "gamma_event_16",
+          "start_time": 55.0,
+          "duration": 13.0,
+          "left_frequency": 520.0,
+          "right_frequency": 620.0,
+          "left_volume": 0.3,
+          "right_volume": 0.7
+        },
+        {
+          "id": "gamma_event_17",
+          "start_time": 68.0,
+          "duration": 21.0,
+          "left_frequency": 680.0,
+          "right_frequency": 720.0,
+          "left_volume": 0.6,
+          "right_volume": 0.4
+        },
+        {
+          "id": "gamma_event_18",
+          "start_time": 89.0,
+          "duration": 1.0,
+          "left_frequency": 510.0,
+          "right_frequency": 610.0,
+          "left_volume": 0.8,
+          "right_volume": 0.2
+        }
+      ],
+      "group_id": null,
+      "color": "#00ff00"
+    },
+    {
+      "id": "chaos_desync_5",
+      "name": "Desynchronization Ego Death Maelstrom - Chaotic Interferences in Sine Linear Bursts",
+      "enabled": true,
+      "transition_style": "LINEAR",
+      "waveform": "SINE",
+      "events": [
+        {
+          "id": "desync_event_1",
+          "start_time": 0.0,
+          "duration": 1.0,
+          "left_frequency": 300.0,
+          "right_frequency": 304.0,
+          "left_volume": 0.5,
+          "right_volume": 0.5
+        },
+        {
+          "id": "desync_event_2",
+          "start_time": 1.0,
+          "duration": 1.0,
+          "left_frequency": 290.0,
+          "right_frequency": 320.0,
+          "left_volume": 0.1,
+          "right_volume": 0.9
+        },
+        {
+          "id": "desync_event_3",
+          "start_time": 2.0,
+          "duration": 1.0,
+          "left_frequency": 310.0,
+          "right_frequency": 340.0,
+          "left_volume": 0.9,
+          "right_volume": 0.1
+        },
+        {
+          "id": "desync_event_4",
+          "start_time": 3.0,
+          "duration": 1.0,
+          "left_frequency": 280.0,
+          "right_frequency": 310.0,
+          "left_volume": 0.2,
+          "right_volume": 0.8
+        },
+        {
+          "id": "desync_event_5",
+          "start_time": 4.0,
+          "duration": 1.0,
+          "left_frequency": 320.0,
+          "right_frequency": 350.0,
+          "left_volume": 0.8,
+          "right_volume": 0.2
+        },
+        {
+          "id": "desync_event_6",
+          "start_time": 5.0,
+          "duration": 2.0,
+          "left_frequency": 270.0,
+          "right_frequency": 300.0,
+          "left_volume": 0.3,
+          "right_volume": 0.7
+        },
+        {
+          "id": "desync_event_7",
+          "start_time": 7.0,
+          "duration": 3.0,
+          "left_frequency": 330.0,
+          "right_frequency": 360.0,
+          "left_volume": 0.7,
+          "right_volume": 0.3
+        },
+        {
+          "id": "desync_event_8",
+          "start_time": 10.0,
+          "duration": 5.0,
+          "left_frequency": 260.0,
+          "right_frequency": 290.0,
+          "left_volume": 0.4,
+          "right_volume": 0.6
+        },
+        {
+          "id": "desync_event_9",
+          "start_time": 15.0,
+          "duration": 8.0,
+          "left_frequency": 340.0,
+          "right_frequency": 370.0,
+          "left_volume": 0.6,
+          "right_volume": 0.4
+        },
+        {
+          "id": "desync_event_10",
+          "start_time": 23.0,
+          "duration": 13.0,
+          "left_frequency": 250.0,
+          "right_frequency": 280.0,
+          "left_volume": 0.0,
+          "right_volume": 1.0
+        },
+        {
+          "id": "desync_event_11",
+          "start_time": 36.0,
+          "duration": 1.0,
+          "left_frequency": 350.0,
+          "right_frequency": 380.0,
+          "left_volume": 1.0,
+          "right_volume": 0.0
+        },
+        {
+          "id": "desync_event_12",
+          "start_time": 37.0,
+          "duration": 1.0,
+          "left_frequency": 240.0,
+          "right_frequency": 270.0,
+          "left_volume": 0.5,
+          "right_volume": 0.5
+        },
+        {
+          "id": "desync_event_13",
+          "start_time": 38.0,
+          "duration": 2.0,
+          "left_frequency": 360.0,
+          "right_frequency": 390.0,
+          "left_volume": 0.1,
+          "right_volume": 0.9
+        },
+        {
+          "id": "desync_event_14",
+          "start_time": 40.0,
+          "duration": 3.0,
+          "left_frequency": 230.0,
+          "right_frequency": 260.0,
+          "left_volume": 0.9,
+          "right_volume": 0.1
+        },
+        {
+          "id": "desync_event_15",
+          "start_time": 43.0,
+          "duration": 5.0,
+          "left_frequency": 370.0,
+          "right_frequency": 400.0,
+          "left_volume": 0.2,
+          "right_volume": 0.8
+        },
+        {
+          "id": "desync_event_16",
+          "start_time": 48.0,
+          "duration": 8.0,
+          "left_frequency": 220.0,
+          "right_frequency": 250.0,
+          "left_volume": 0.8,
+          "right_volume": 0.2
+        },
+        {
+          "id": "desync_event_17",
+          "start_time": 56.0,
+          "duration": 13.0,
+          "left_frequency": 380.0,
+          "right_frequency": 410.0,
+          "left_volume": 0.3,
+          "right_volume": 0.7
+        },
+        {
+          "id": "desync_event_18",
+          "start_time": 69.0,
+          "duration": 21.0,
+          "left_frequency": 210.0,
+          "right_frequency": 240.0,
+          "left_volume": 0.7,
+          "right_volume": 0.3
+        }
+      ],
+      "group_id": null,
+      "color": "#0000ff"
+    }
+  ],
+  "groups": [],
+  "settings": {
+    "duration": 100.0,
+    "master_volume_left": 1.0,
+    "master_volume_right": 1.0,
+    "sample_rate": 48000,
+    "buffer_size": 4096,
+    "limiter_enabled": true,
+    "limiter_threshold": 0.95
+  }
+}
